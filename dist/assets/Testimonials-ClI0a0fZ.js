@@ -1,0 +1,1 @@
+import{ut as e}from"./fi-DICGNOFk.js";import{t}from"./FeaturePageTemplate-B5Xm85-J.js";import{n,t as r}from"./featurePagesContent-DfSLGdHG.js";var i=e();function a(){return(0,i.jsx)(t,{content:n.testimonials,navItems:r.primary})}export{a as default};
