@@ -1,4 +1,5 @@
 import { memo, useState, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import { FiPlay, FiCopy, FiCheck } from 'react-icons/fi'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -339,9 +340,9 @@ function ApiPlayground() {
       <div className="border-t border-[var(--line)] bg-[var(--surface-strong)] px-6 py-4">
         <p className="text-sm text-[var(--text-soft)]">
           This playground uses mock responses.{' '}
-          <a href="/contact" className="font-semibold text-[var(--accent)] hover:underline">
+          <Link to="/contact" className="font-semibold text-[var(--accent)] hover:underline">
             Get a free API key
-          </a>{' '}
+          </Link>{' '}
           to fire live requests against the Navfy production API.
         </p>
       </div>

@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import ErrorBoundary from './components/common/ErrorBoundary'
 import { PageLoader } from './components/common/Loader'
 import AIChatbot from './components/common/AIChatbot'
@@ -28,7 +28,7 @@ const ContactPage = lazy(() => import('./pages/Contact'))
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ErrorBoundary>
         <Suspense fallback={<PageLoader />}>
           <Routes>
@@ -56,7 +56,7 @@ function App() {
           <AIChatbot />
         </Suspense>
       </ErrorBoundary>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
