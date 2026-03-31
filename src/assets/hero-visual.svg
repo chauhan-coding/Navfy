@@ -1,0 +1,37 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="720" rx="36" fill="url(#bg)"/>
+  <rect x="44" y="48" width="872" height="624" rx="28" fill="#08111F" fill-opacity="0.36" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="92" y="96" width="362" height="230" rx="24" fill="#F8FAFC" fill-opacity="0.92"/>
+  <rect x="118" y="126" width="128" height="14" rx="7" fill="#0F766E" fill-opacity="0.22"/>
+  <rect x="118" y="162" width="212" height="22" rx="11" fill="#0F172A"/>
+  <rect x="118" y="198" width="172" height="12" rx="6" fill="#64748B" fill-opacity="0.55"/>
+  <rect x="118" y="236" width="308" height="58" rx="18" fill="#DFF7F4"/>
+  <path d="M150 265C186 240 227 252 254 226C289 192 336 205 394 177" stroke="#0F766E" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="151" cy="264" r="14" fill="#0F766E"/>
+  <circle cx="254" cy="226" r="14" fill="#14B8A6"/>
+  <circle cx="394" cy="177" r="14" fill="#67E8F9"/>
+  <rect x="500" y="96" width="368" height="336" rx="28" fill="#0B1220" stroke="rgba(255,255,255,0.12)"/>
+  <path d="M540 372C603 292 661 322 710 250C748 195 802 194 830 156" stroke="#67E8F9" stroke-width="10" stroke-linecap="round" stroke-dasharray="12 14"/>
+  <circle cx="540" cy="372" r="13" fill="#67E8F9"/>
+  <circle cx="711" cy="250" r="13" fill="#2DD4BF"/>
+  <circle cx="830" cy="156" r="13" fill="#F8FAFC"/>
+  <rect x="535" y="132" width="116" height="118" rx="22" fill="#0F766E" fill-opacity="0.18"/>
+  <rect x="676" y="132" width="152" height="26" rx="13" fill="#E2E8F0" fill-opacity="0.1"/>
+  <rect x="676" y="176" width="122" height="18" rx="9" fill="#E2E8F0" fill-opacity="0.2"/>
+  <rect x="676" y="208" width="82" height="18" rx="9" fill="#E2E8F0" fill-opacity="0.2"/>
+  <rect x="92" y="360" width="776" height="256" rx="28" fill="#F8FAFC" fill-opacity="0.96"/>
+  <rect x="124" y="398" width="172" height="166" rx="22" fill="#E2E8F0"/>
+  <rect x="320" y="398" width="260" height="166" rx="22" fill="#0F172A"/>
+  <rect x="604" y="398" width="232" height="74" rx="22" fill="#DFF7F4"/>
+  <rect x="604" y="490" width="232" height="74" rx="22" fill="#ECFEFF"/>
+  <rect x="344" y="426" width="96" height="12" rx="6" fill="#A5F3FC"/>
+  <rect x="344" y="454" width="180" height="20" rx="10" fill="#FFFFFF" fill-opacity="0.88"/>
+  <rect x="344" y="488" width="136" height="10" rx="5" fill="#CBD5E1" fill-opacity="0.75"/>
+  <defs>
+    <linearGradient id="bg" x1="54" y1="34" x2="891" y2="678" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#082032"/>
+      <stop offset="0.55" stop-color="#0F4C5C"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+</svg>

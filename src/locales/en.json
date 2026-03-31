@@ -1,0 +1,80 @@
+{
+  "common": {
+    "signIn": "Sign In",
+    "viewDetails": "View Details",
+    "learnMore": "Learn More",
+    "loading": "Loading...",
+    "loadingContent": "Preparing your experience",
+    "errorTitle": "Something went wrong",
+    "errorBody": "An unexpected error occurred. Please try refreshing the page.",
+    "errorRetry": "Refresh page",
+    "followUs": "Follow Us",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "toggleThemeDark": "Switch to dark mode",
+    "toggleThemeLight": "Switch to light mode",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "Enter your email",
+    "readMore": "Read more",
+    "backToHome": "Back to home"
+  },
+  "home": {
+    "gadgetsLink": "Gadgets",
+    "ambassadorLink": "Ambassador",
+    "bookDemo": "Book demo"
+  },
+  "gadgets": {
+    "nav": {
+      "signIn": "Sign In"
+    },
+    "products": {
+      "viewDetails": "View Details",
+      "imagePlaceholder": "Product image"
+    },
+    "news": {
+      "readMore": "Read more"
+    },
+    "footer": {
+      "copyright": "Â© Copyright 2024, Navfy Inc. All rights reserved"
+    }
+  },
+  "ambassador": {
+    "nav": {
+      "toggleMenu": "Toggle navigation menu"
+    },
+    "footer": {
+      "followUs": "Follow Us"
+    }
+  },
+  "footer": {
+    "followUs": "Follow Us",
+    "newsletterCta": "Subscribe",
+    "copyright": "Â© 2024 Navfy. All rights reserved."
+  },
+  "map": {
+    "originLabel": "Origin",
+    "destinationLabel": "Destination",
+    "originMarker": "Start",
+    "destinationMarker": "Destination",
+    "routePolylineAlt": "Route path on map",
+    "mapAttribution": "Â© OpenStreetMap contributors",
+    "swapLocations": "Swap origin and destination"
+  },
+  "errors": {
+    "genericTitle": "Something went wrong",
+    "genericBody": "An unexpected error occurred. Please try refreshing the page.",
+    "retry": "Refresh page",
+    "routeNotFound": "Page not found",
+    "routeNotFoundBody": "The page you are looking for doesn't exist or has been moved."
+  },
+  "a11y": {
+    "logoAlt": "Navfy home",
+    "themeToggle": "Toggle color theme",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "productImageAlt": "Product illustration",
+    "heroImageAlt": "Platform dashboard overview",
+    "loadingSpinner": "Loading content"
+  }
+}
+
