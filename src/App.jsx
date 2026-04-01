@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ErrorBoundary from './components/common/ErrorBoundary'
 import { PageLoader } from './components/common/Loader'
 import AIChatbot from './components/common/AIChatbot'
@@ -20,7 +20,7 @@ const DevelopersPage = lazy(() => import('./pages/Developers'))
 const CompanyPage = lazy(() => import('./pages/Company'))
 const TrackersPage = lazy(() => import('./pages/Trackers'))
 const DashCamerasPage = lazy(() => import('./pages/DashCameras'))
-const NavitainmentPage = lazy(() => import('./pages/NaviTainment'))
+const NavitainmentPage = lazy(() => import('./pages/Navitainment'))
 const SmartInternetKidsPage = lazy(() => import('./pages/SmartInternetKids'))
 const AboutNavfyPage = lazy(() => import('./pages/AboutNavfy'))
 const PricingPage = lazy(() => import('./pages/Pricing'))
@@ -28,7 +28,7 @@ const ContactPage = lazy(() => import('./pages/Contact'))
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ErrorBoundary>
         <Suspense fallback={<PageLoader />}>
           <Routes>
@@ -56,7 +56,7 @@ function App() {
           <AIChatbot />
         </Suspense>
       </ErrorBoundary>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 

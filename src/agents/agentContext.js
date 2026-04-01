@@ -24,6 +24,26 @@ export const PAGE_CONTEXT = {
         primaryGoal: 'Help user submit relevant inquiry quickly',
         availableDemos: ['contact-form-guide'],
     },
+    '/products': {
+        name: 'Products',
+        primaryGoal: 'Help user explore product capabilities and choose the right product',
+        availableDemos: ['product-overview-demo', 'feature-comparison-demo'],
+    },
+    '/solutions': {
+        name: 'Solutions',
+        primaryGoal: 'Match user industry/use-case to the right solution',
+        availableDemos: ['fleet-solution-demo', 'logistics-demo', 'real-estate-demo'],
+    },
+    '/enterprise': {
+        name: 'Enterprise',
+        primaryGoal: 'Help enterprise buyers understand compliance, SLA, and deployment options',
+        availableDemos: ['enterprise-scope-demo', 'security-posture-demo'],
+    },
+    '/developers': {
+        name: 'Developers',
+        primaryGoal: 'Help developers get started with SDK, docs, and API access',
+        availableDemos: ['sdk-quickstart-demo', 'api-key-setup-demo'],
+    },
 }
 
 export function getPageContext(pathname) {

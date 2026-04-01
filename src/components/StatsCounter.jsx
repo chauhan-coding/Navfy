@@ -34,16 +34,19 @@ function StatsCounter({ value, suffix, label, index }) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.45, delay: index * 0.08 }}
-      className="glass-panel rounded-3xl p-6 text-center"
+      transition={{ duration: 0.45, delay: index * 0.09, ease: [0.22, 1, 0.36, 1] }}
+      className="interactive-card glass-panel card-shadow overflow-hidden rounded-[1.5rem] text-center"
     >
-      <p className="text-4xl font-semibold tracking-[-0.04em] text-[var(--text)] sm:text-5xl">
-        {count}{suffix}
-      </p>
-      <p className="mt-3 text-sm uppercase tracking-[0.2em] text-[var(--text-soft)]">{label}</p>
+      <div className="h-1 w-full bg-[var(--accent)]" aria-hidden="true" />
+      <div className="p-6">
+        <p className="text-4xl font-semibold tracking-[-0.05em] text-[var(--text)] sm:text-5xl">
+          {count}{suffix}
+        </p>
+        <p className="mt-2 text-xs uppercase tracking-[0.22em] text-[var(--text-soft)]">{label}</p>
+      </div>
     </motion.div>
   )
 }

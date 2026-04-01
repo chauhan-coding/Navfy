@@ -9,7 +9,7 @@ function GlobalMapAccess() {
   return (
     <Link
       to="/map"
-      className="fixed bottom-20 left-5 z-50 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface)] px-4 py-2.5 text-sm font-semibold text-[var(--text)] shadow-md transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+      className="fixed bottom-5 left-5 z-50 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface)] px-4 py-2.5 text-sm font-semibold text-[var(--text)] shadow-md transition duration-200 hover:border-[var(--accent)] hover:text-[var(--accent)] hover:-translate-y-0.5"
       aria-label="Open live map"
     >
       <FiMap size={15} />

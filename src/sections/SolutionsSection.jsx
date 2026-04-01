@@ -16,17 +16,17 @@ function SolutionsSection({ tabs }) {
           description={sectionHeadings.solutions.description}
         />
 
-        <div className="mt-10 flex flex-wrap gap-3">
+        <div className="mt-10 -mx-4 flex gap-2.5 overflow-x-auto px-4 pb-1 sm:-mx-0 sm:flex-wrap sm:overflow-x-visible sm:px-0">
           {tabs.map((tab) => (
             <button
               key={tab.key}
               type="button"
               onClick={() => setActiveTab(tab.key)}
               className={[
-                'rounded-full px-5 py-3 text-sm font-semibold transition',
+                'shrink-0 rounded-full px-5 py-2.5 text-sm font-semibold transition duration-200',
                 activeTab === tab.key
-                  ? 'bg-[var(--accent)] text-white'
-                  : 'glass-panel text-[var(--text)] hover:border-[var(--line-strong)]',
+                  ? 'bg-[var(--accent)] text-white shadow-md shadow-[var(--glow)]'
+                  : 'glass-panel text-[var(--text)] hover:border-[color-mix(in_srgb,var(--accent)_40%,transparent)]',
               ].join(' ')}
             >
               {tab.label}
@@ -34,7 +34,7 @@ function SolutionsSection({ tabs }) {
           ))}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6" style={{ minHeight: '320px' }}>
           <SolutionCard
             title={activeItem.title}
             description={activeItem.description}

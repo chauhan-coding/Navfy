@@ -1,5 +1,4 @@
 import { forwardRef } from 'react'
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { cn } from '../../utils/cn'
 import { buttonVariants } from '../../config/theme'
@@ -66,16 +65,6 @@ const Button = forwardRef(function Button(
   }
 
   if (href) {
-    const isInternalRoute = href.startsWith('/')
-
-    if (isInternalRoute) {
-      return (
-        <Link ref={ref} to={href} className={classes} {...props}>
-          {children}
-        </Link>
-      )
-    }
-
     return (
       <a ref={ref} href={href} className={classes} {...props}>
         {children}

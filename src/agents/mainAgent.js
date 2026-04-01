@@ -19,10 +19,19 @@ function composeDevOutputs(outputs) {
         ? `${primary.text} ${secondaryNotes[0]}`
         : primary.text
 
+    // Deduplicate actions and recommendations by label
+    const allActions = outputs.flatMap((o) => o.actions ?? [])
+    const uniqueActions = [...new Map(allActions.map((a) => [a.label, a])).values()].slice(0, 3)
+
+    const allRecs = outputs.flatMap((o) => o.recommendations ?? [])
+    const uniqueRecs = [...new Map(allRecs.map((r) => [r.label, r])).values()].slice(0, 3)
+
     return {
         ...primary,
         text,
-        actions: outputs.flatMap((o) => o.actions ?? []).slice(0, 3),
+        bullets: primary.bullets ?? null,
+        actions: uniqueActions,
+        recommendations: uniqueRecs,
         confidence: Math.max(...outputs.map((o) => o.confidence ?? 0.5)),
     }
 }

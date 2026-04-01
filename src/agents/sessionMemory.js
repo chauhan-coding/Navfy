@@ -15,6 +15,7 @@ export function createAgentSession(pathname = '/') {
         stage: 'entry',
         primaryNeed: null,
         visitedPages: [pathname],
+        topicHistory: [],
         turns: 0,
         lastIntent: 'onboarding',
         lastUpdatedAt: Date.now(),
@@ -34,6 +35,14 @@ export function updateAgentSession(session, payload) {
 
     if (!next.primaryNeed && payload.intent && payload.intent !== 'onboarding') {
         next.primaryNeed = payload.intent
+    }
+
+    // Track topic history (last 5 non-onboarding intents)
+    if (payload.intent && payload.intent !== 'onboarding') {
+        if (!next.topicHistory) next.topicHistory = []
+        if (!next.topicHistory.includes(payload.intent)) {
+            next.topicHistory = [...next.topicHistory, payload.intent].slice(-5)
+        }
     }
 
     let stageCandidate = next.stage

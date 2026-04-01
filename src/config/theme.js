@@ -65,13 +65,13 @@ export const radius = {
 
 export const navVariants = {
     glass: {
-        wrapper: 'sticky top-0 z-30 px-4 py-4 sm:px-6 lg:px-8',
-        inner: 'glass-panel container-shell flex items-center justify-between rounded-full px-4 py-3 sm:px-5',
-        logo: 'text-lg font-semibold tracking-[-0.04em] text-[var(--text)]',
-        link: 'text-sm font-medium text-[var(--text-soft)] transition hover:text-[var(--text)]',
-        activeLink: 'text-[var(--accent)]',
-        ctaPrimary: 'rounded-full bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-white hidden sm:inline-flex transition hover:opacity-90',
-        ctaOutline: 'rounded-full border border-[var(--accent)] px-4 py-2 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-white hidden sm:inline-flex',
+        wrapper: 'sticky top-0 z-40 px-4 py-3 sm:px-6 lg:px-8',
+        inner: 'glass-panel container-shell flex items-center justify-between rounded-2xl px-4 py-2.5 sm:px-5',
+        logo: 'text-lg font-bold tracking-[-0.05em] text-[var(--text)]',
+        link: 'text-sm font-medium text-[var(--text-soft)] transition-colors duration-150 hover:text-[var(--text)]',
+        activeLink: 'font-semibold text-[var(--accent)]',
+        ctaPrimary: 'btn-premium hidden py-2 px-5 sm:inline-flex',
+        ctaOutline: 'btn-ghost-premium hidden py-2 px-5 sm:inline-flex',
         drawerLink: 'block rounded-xl px-4 py-3 text-sm font-medium text-[var(--text-soft)] transition hover:bg-[var(--surface-strong)] hover:text-[var(--text)]',
         hamburger: 'text-[var(--text)]',
     },
@@ -162,7 +162,7 @@ export const buttonVariants = {
 // ─── Card Variant Styles ──────────────────────────────────────────────────────
 
 export const cardVariants = {
-    glass: 'glass-panel card-shadow group rounded-3xl p-6 transition duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:border-[var(--line-strong)]',
+    glass: 'glass-panel interactive-card card-shadow group rounded-[1.5rem] p-6',
     dark: 'bg-gray-900 rounded-lg border border-gray-800 hover:border-cyan-500 transition-colors duration-300',
     ambassador: 'rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm',
     stat: 'glass-panel rounded-3xl p-6 text-center',

@@ -33,7 +33,7 @@ function Navbar({
   logoTo = '/',
 }) {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const styles = navVariants.glass
+  const styles = navVariants[variant] ?? navVariants.glass
   const location = useLocation()
   const { theme, toggleTheme } = useTheme()
 
@@ -124,30 +124,38 @@ function Navbar({
         {mobileOpen && (
           <motion.div
             key="mobile-drawer"
-            initial={{ opacity: 0, y: -8 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.18 }}
-            className={cn(
-              'md:hidden border-t',
-              'border-[var(--line)]',
-            )}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="md:hidden"
           >
-            <div className="flex flex-col gap-1 px-4 py-4">
-              {navItems.map((item) => (
-                <NavLink key={item.label} item={item} />
-              ))}
+            <div className="mx-3 mt-2 overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--surface)] shadow-xl backdrop-blur-2xl">
+              <div className="flex flex-col gap-1 px-3 py-3">
+                {navItems.map((item) => (
+                  <NavLink key={item.label} item={item} />
+                ))}
+              </div>
               {cta && (
-                <a
-                  href={cta.href}
-                  className={cn(
-                    'mt-2 rounded-full px-4 py-3 text-center text-sm font-semibold text-white',
-                    'bg-[var(--accent)]',
+                <div className="border-t border-[var(--line)] px-3 py-3">
+                  {cta.type === 'router' ? (
+                    <Link
+                      to={cta.href}
+                      className="block w-full rounded-xl bg-[var(--accent)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:opacity-90"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {cta.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={cta.href}
+                      className="block w-full rounded-xl bg-[var(--accent)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:opacity-90"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {cta.label}
+                    </a>
                   )}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {cta.label}
-                </a>
+                </div>
               )}
             </div>
           </motion.div>

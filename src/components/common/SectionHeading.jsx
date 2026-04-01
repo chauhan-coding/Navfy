@@ -18,22 +18,25 @@ function SectionHeading({ eyebrow, title, description, align = 'left', eyebrowCo
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.35 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
         align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl',
         className,
       )}
     >
       {eyebrow && (
-        <p className={cn('mb-4 text-sm font-semibold uppercase tracking-[0.24em]', eyebrowColors[eyebrowColor])}>
+        <span className={cn(
+          'mb-4 inline-flex items-center rounded-full border border-[var(--line)] bg-[var(--accent-soft)] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.2em]',
+          eyebrowColors[eyebrowColor],
+        )}>
           {eyebrow}
-        </p>
+        </span>
       )}
-      <h2 className="section-title">{title}</h2>
-      {description && <p className="section-copy mt-5">{description}</p>}
+      <h2 className="section-title mt-4">{title}</h2>
+      {description && <p className="section-copy mt-4">{description}</p>}
     </motion.div>
   )
 }

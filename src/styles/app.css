@@ -9,40 +9,45 @@
 @layer base {
   :root {
     color-scheme: light;
-    --bg: #f5f8fc;
-    --bg-elevated: rgba(255, 255, 255, 0.72);
+    --bg: #f4f7fb;
+    --bg-elevated: rgba(255, 255, 255, 0.82);
     --surface: #ffffff;
-    --surface-strong: #edf4ff;
-    --line: rgba(15, 23, 42, 0.08);
-    --line-strong: rgba(15, 23, 42, 0.14);
-    --text: #1e293b;
-    --text-soft: #52607a;
+    --surface-strong: #eaf3ff;
+    --line: rgba(15, 23, 42, 0.09);
+    --line-strong: rgba(15, 23, 42, 0.18);
+    --text: #0f1c2e;
+    --text-soft: #4a5a72;
     --accent: #0f766e;
-    --accent-strong: #164e63;
-    --accent-soft: #ccfbf1;
+    --accent-strong: #134e4a;
+    --accent-soft: rgba(20, 184, 166, 0.12);
     --hero-from: #0f172a;
     --hero-via: #0b3a54;
     --hero-to: #0f766e;
-    --glow: rgba(20, 184, 166, 0.22);
+    --glow: rgba(20, 184, 166, 0.28);
+    --glow-blue: rgba(56, 189, 248, 0.18);
+    --radius-section: 2.25rem;
+    --radius-card: 1.5rem;
+    --radius-btn: 9999px;
   }
 
   .dark {
     color-scheme: dark;
     --bg: #07111f;
-    --bg-elevated: rgba(8, 15, 28, 0.7);
+    --bg-elevated: rgba(8, 15, 28, 0.78);
     --surface: #0d1828;
-    --surface-strong: #13233a;
-    --line: rgba(148, 163, 184, 0.15);
-    --line-strong: rgba(148, 163, 184, 0.28);
-    --text: #e5eefb;
-    --text-soft: #9fb0c8;
+    --surface-strong: #152438;
+    --line: rgba(148, 163, 184, 0.13);
+    --line-strong: rgba(148, 163, 184, 0.26);
+    --text: #e2eaf8;
+    --text-soft: #8fa4be;
     --accent: #2dd4bf;
-    --accent-strong: #67e8f9;
-    --accent-soft: rgba(45, 212, 191, 0.12);
+    --accent-strong: #5eead4;
+    --accent-soft: rgba(45, 212, 191, 0.14);
     --hero-from: #030712;
-    --hero-via: #0f2f45;
-    --hero-to: #115e59;
-    --glow: rgba(45, 212, 191, 0.25);
+    --hero-via: #0c2d45;
+    --hero-to: #0f5e59;
+    --glow: rgba(45, 212, 191, 0.28);
+    --glow-blue: rgba(56, 189, 248, 0.14);
   }
 
   * {
@@ -51,15 +56,17 @@
 
   html {
     @apply scroll-smooth;
+    scroll-padding-top: 5rem;
   }
 
   body {
     @apply m-0 bg-[var(--bg)] text-[var(--text)] antialiased;
     font-family: var(--font-sans);
     background-image:
-      radial-gradient(circle at top left, rgba(103, 232, 249, 0.12), transparent 28%),
-      radial-gradient(circle at top right, rgba(20, 184, 166, 0.14), transparent 22%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.65), transparent 24%);
+      radial-gradient(ellipse 60% 40% at 10% -5%, rgba(56, 189, 248, 0.14), transparent),
+      radial-gradient(ellipse 50% 35% at 92% 2%, rgba(20, 184, 166, 0.18), transparent),
+      radial-gradient(ellipse 55% 30% at 50% 105%, rgba(20, 184, 166, 0.1), transparent),
+      linear-gradient(180deg, rgba(255,255,255,0.7), transparent 22%);
   }
 
   body::before {
@@ -67,10 +74,12 @@
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background-image: linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    z-index: 0;
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
       linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
-    background-size: 42px 42px;
-    mask-image: radial-gradient(circle at center, black, transparent 82%);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse 80% 70% at center, black 40%, transparent 85%);
   }
 
   img {
@@ -86,49 +95,141 @@
   }
 
   #root {
-    @apply min-h-screen;
+    @apply relative min-h-screen;
   }
 }
 
 @layer utilities {
+  /* ── Layout ─────────────────────────────────────────────────── */
   .container-shell {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
-  .glass-panel {
-    @apply border border-[var(--line)] bg-[var(--bg-elevated)] backdrop-blur-xl;
-    box-shadow: 0 24px 80px -30px var(--glow);
-  }
-
   .section-gap {
-    @apply py-18 sm:py-22 lg:py-28;
+    @apply py-16 sm:py-20 lg:py-28;
   }
 
+  /* ── Surfaces ────────────────────────────────────────────────── */
+  .glass-panel {
+    @apply border border-[var(--line)] bg-[var(--bg-elevated)] backdrop-blur-2xl;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04), 0 24px 72px -32px var(--glow);
+  }
+
+  .glass-panel-strong {
+    @apply border border-[var(--line-strong)] backdrop-blur-2xl;
+    background-color: color-mix(in srgb, var(--surface) 90%, transparent);
+  }
+
+  /* ── Typography ─────────────────────────────────────────────── */
   .section-title {
-    @apply text-3xl font-semibold tracking-[-0.04em] sm:text-4xl lg:text-5xl;
+    @apply text-balance text-3xl font-semibold tracking-[-0.04em] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15];
     font-family: var(--font-display);
   }
 
   .section-copy {
-    @apply text-sm leading-7 text-[var(--text-soft)] sm:text-base;
+    @apply text-sm leading-[1.85] text-[var(--text-soft)] sm:text-base;
   }
 
-  .hero-gradient {
-    background-image: linear-gradient(135deg, var(--hero-from), var(--hero-via) 48%, var(--hero-to));
-  }
-
-  .card-shadow {
-    box-shadow: 0 24px 60px -30px rgba(15, 23, 42, 0.45);
+  .text-gradient {
+    background: linear-gradient(130deg, #67e8f9 0%, var(--accent) 45%, #b2f5ea 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .font-display {
     font-family: var(--font-display);
   }
 
-  .text-gradient {
-    background: linear-gradient(120deg, #67e8f9, var(--accent), #f8fafc);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  /* ── Hero ────────────────────────────────────────────────────── */
+  .hero-gradient {
+    background-image: linear-gradient(138deg, var(--hero-from) 0%, var(--hero-via) 50%, var(--hero-to) 100%);
   }
+
+  /* ── Buttons ─────────────────────────────────────────────────── */
+  .btn-premium {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-200;
+    background-image: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+    box-shadow: 0 8px 28px -10px var(--glow), inset 0 1px 0 rgba(255,255,255,0.12);
+  }
+
+  .btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px -12px var(--glow), inset 0 1px 0 rgba(255,255,255,0.12);
+  }
+
+  .btn-premium:active {
+    transform: translateY(0);
+  }
+
+  .btn-ghost-premium {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold transition-all duration-200;
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent-soft) 60%, transparent);
+  }
+
+  .btn-ghost-premium:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  /* ── Cards ───────────────────────────────────────────────────── */
+  .interactive-card {
+    transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 240ms ease;
+  }
+
+  .interactive-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 56px -24px var(--glow);
+    border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+
+  .card-shadow {
+    box-shadow: 0 8px 16px -4px rgba(15, 23, 42, 0.08), 0 24px 56px -24px rgba(15, 23, 42, 0.38);
+  }
+
+  /* ── Accent chip / tag ───────────────────────────────────────── */
+  .highlight-chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.18em];
+    border-color: color-mix(in srgb, var(--accent) 28%, transparent);
+    background: color-mix(in srgb, var(--accent-soft) 80%, transparent);
+    color: var(--accent-strong);
+  }
+
+  /* ── Progress bar ────────────────────────────────────────────── */
+  .progress-bar {
+    @apply h-0.5 rounded-full bg-[var(--accent)];
+    animation: progressFill linear forwards;
+  }
+}
+
+/* ── Keyframes ────────────────────────────────────────────────── */
+@keyframes progressFill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes pulseRing {
+  0%   { transform: scale(1);    opacity: 0.6; }
+  70%  { transform: scale(1.55); opacity: 0; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
+@keyframes fadeUpIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0px); }
+  30%           { transform: translateY(-5px); }
 }

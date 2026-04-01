@@ -97,17 +97,17 @@ function FeaturePageTemplate({ content, navItems }) {
       />
 
       <main className="pb-16">
-        <section className="px-4 pb-12 pt-14 sm:px-6 lg:px-8 lg:pb-16 lg:pt-18">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <section className="px-4 pb-12 pt-12 sm:px-6 lg:px-8 lg:pb-16 lg:pt-14">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
-              <p className={`text-sm font-semibold uppercase tracking-[0.24em] ${accentClass}`}>{content.eyebrow}</p>
-              <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-6xl">
+              <span className={`inline-flex rounded-full border border-[var(--line)] bg-[var(--accent-soft)] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] ${accentClass}`}>{content.eyebrow}</span>
+              <h1 className="mt-5 text-balance text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-6xl">
                 {content.title}
               </h1>
-              <p className={`mt-6 max-w-2xl text-base leading-8 sm:text-lg ${mutedClass}`}>
+              <p className={`mt-6 max-w-2xl text-base leading-[1.8] sm:text-lg ${mutedClass}`}>
                 {content.description}
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-3">
                 <Button href={content.primaryCta.href} colorScheme={buttonScheme} size="lg">
                   {content.primaryCta.label}
                 </Button>
@@ -117,17 +117,17 @@ function FeaturePageTemplate({ content, navItems }) {
               </div>
             </div>
 
-            <div className={`relative overflow-hidden rounded-[2rem] border p-6 sm:p-8 ${panelClass}`}>
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),_transparent_55%)]" />
+            <div className={`relative overflow-hidden rounded-[var(--radius-section)] border p-6 sm:p-8 ${panelClass}`}>
+              <div className="pointer-events-none absolute inset-0" aria-hidden="true" style={{ background: 'radial-gradient(ellipse 70% 55% at 60% 0%, rgba(56,189,248,0.14), transparent)' }} />
               <div className="relative">
-                <p className={`text-xs font-semibold uppercase tracking-[0.24em] ${accentClass}`}>{content.visualLabel}</p>
+                <span className={`text-xs font-semibold uppercase tracking-[0.22em] ${accentClass}`}>{content.visualLabel}</span>
                 <h2 className="mt-3 text-2xl font-semibold tracking-[-0.04em]">{content.visualTitle}</h2>
-                <p className={`mt-4 text-sm leading-7 ${mutedClass}`}>{content.visualDescription}</p>
+                <p className={`mt-3 text-sm leading-[1.75] ${mutedClass}`}>{content.visualDescription}</p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-3">
                   {content.stats.map((stat) => (
                     <div key={stat.label} className={`rounded-2xl border p-4 ${panelClass}`}>
-                      <div className="text-2xl font-semibold">{stat.value}</div>
-                      <div className={`mt-2 text-xs uppercase tracking-[0.18em] ${mutedClass}`}>{stat.label}</div>
+                      <div className="text-2xl font-semibold tracking-tight">{stat.value}</div>
+                      <div className={`mt-1.5 text-xs uppercase tracking-[0.18em] ${mutedClass}`}>{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -139,9 +139,9 @@ function FeaturePageTemplate({ content, navItems }) {
         <section className="px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionHeading
-              eyebrow="Feature Highlights"
-              title="Capabilities that make the page commercially useful."
-              description="Each section is designed to explain product value, reduce buyer uncertainty, and create a stronger path to action."
+              eyebrow={content.highlightsLabel ?? 'Feature Highlights'}
+              title={content.highlightsTitle ?? 'Purpose-built capabilities for teams shipping at scale.'}
+              description={content.highlightsDescription ?? 'Each feature is scoped to reduce friction and accelerate key workflows.'}
               eyebrowColor="default"
             />
             <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -179,11 +179,11 @@ function FeaturePageTemplate({ content, navItems }) {
               </div>
             </div>
 
-            <div className={`rounded-[2rem] border p-8 ${panelClass}`}>
+            <div className={`rounded-[var(--radius-section)] border p-8 ${panelClass}`}>
               <SectionHeading
                 eyebrow="Additional Info"
-                title="Technical and integration readiness."
-                description="These details are intentionally compact so the page can scale later into deeper technical documentation or partner collateral."
+                title="Integration and technical details."
+                description="Key facts to inform integration decisions and technical planning."
                 eyebrowColor="default"
               />
               <div className="mt-8 space-y-3">

@@ -23,6 +23,7 @@ export const QAAgent = {
                 actions: [],
                 recommendations: [],
                 demo: null,
+                bullets: null,
                 reviewedBy: 'QA Agent',
             }
         }
@@ -54,6 +55,7 @@ export const QAAgent = {
             actions: cleanedActions,
             recommendations: cleanedRecommendations,
             demo: composed.demo,
+            bullets: composed.bullets ?? null,
             reviewedBy: 'QA Agent',
         }
     },
