@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import ErrorBoundary from './components/common/ErrorBoundary'
 import { PageLoader } from './components/common/Loader'
 import AIChatbot from './components/common/AIChatbot'
@@ -28,35 +28,35 @@ const ContactPage = lazy(() => import('./pages/Contact'))
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ErrorBoundary>
-        <Suspense fallback={<PageLoader />}>
+        <Suspense fallback={<PageLoader />}> 
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/solutions" element={<SolutionsPage />} />
-            <Route path="/apis" element={<ApisPage />} />
-            <Route path="/stats" element={<StatsPage />} />
-            <Route path="/testimonials" element={<TestimonialsPage />} />
-            <Route path="/ambassador" element={<AmbassadorPage />} />
-            <Route path="/enterprise" element={<EnterprisePage />} />
-            <Route path="/developers" element={<DevelopersPage />} />
-            <Route path="/company" element={<CompanyPage />} />
-            <Route path="/gadgets" element={<MaplsGadgetsPage />} />
-            <Route path="/trackers" element={<TrackersPage />} />
-            <Route path="/dash-cameras" element={<DashCamerasPage />} />
-            <Route path="/navi-tainment" element={<NavitainmentPage />} />
-            <Route path="/smart-internet-kids" element={<SmartInternetKidsPage />} />
-            <Route path="/about-navfy" element={<AboutNavfyPage />} />
-            <Route path="/map" element={<MapPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route path="/contact" element={<ContactPage />} />
+            <Route path='/' element={<HomePage />} />
+            <Route path='/products' element={<ProductsPage />} />
+            <Route path='/solutions' element={<SolutionsPage />} />
+            <Route path='/apis' element={<ApisPage />} />
+            <Route path='/stats' element={<StatsPage />} />
+            <Route path='/testimonials' element={<TestimonialsPage />} />
+            <Route path='/ambassador' element={<AmbassadorPage />} />
+            <Route path='/enterprise' element={<EnterprisePage />} />
+            <Route path='/developers' element={<DevelopersPage />} />
+            <Route path='/company' element={<CompanyPage />} />
+            <Route path='/gadgets' element={<MaplsGadgetsPage />} />
+            <Route path='/trackers' element={<TrackersPage />} />
+            <Route path='/dash-cameras' element={<DashCamerasPage />} />
+            <Route path='/navi-tainment' element={<NavitainmentPage />} />
+            <Route path='/smart-internet-kids' element={<SmartInternetKidsPage />} />
+            <Route path='/about-navfy' element={<AboutNavfyPage />} />
+            <Route path='/map' element={<MapPage />} />
+            <Route path='/pricing' element={<PricingPage />} />
+            <Route path='/contact' element={<ContactPage />} />
           </Routes>
           <GlobalMapAccess />
           <AIChatbot />
         </Suspense>
       </ErrorBoundary>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
