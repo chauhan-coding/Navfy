@@ -65,7 +65,7 @@ export async function runMultiAgentCycle({ message, pathname, history = [], sess
                 history,
             }),
         )
-    } catch (err) {
+    } catch {
         trace.push({ step: 'retry', label: 'Primary agent failed, switching fallback agent...' })
         selectedAgents = [UIDemoAgent]
         outputs = selectedAgents.map((agent) =>

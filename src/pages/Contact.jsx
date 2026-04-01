@@ -110,10 +110,10 @@ function Contact() {
                 { icon: FiMail, label: 'Careers', value: 'careers@navfy.com', href: 'mailto:careers@navfy.com' },
                 { icon: FiPhone, label: 'Developer support', value: '+91 80 4600 1234', href: 'tel:+918046001234' },
                 { icon: FiMapPin, label: 'Head office', value: 'Navfy Technologies, Whitefield, Bengaluru 560066', href: null },
-              ].map(({ icon: Icon, label, value, href }) => (
+              ].map(({ icon: IconComponent, label, value, href }) => (
                 <div key={label} className="flex items-start gap-3">
                   <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-soft)] text-[var(--accent)]">
-                    <Icon size={16} />
+                    <IconComponent size={16} />
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-soft)]">{label}</p>

@@ -129,9 +129,9 @@ function Apis() {
           <div className="mx-auto max-w-7xl">
             <SectionHeading eyebrow="Map Tiles & Rendering" title="Fast, customisable map tiles from Navfy CDN." />
             <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-              {TILE_FEATURES.map(({ icon: Icon, title, body }, i) => (
+              {TILE_FEATURES.map(({ icon: IconComponent, title, body }, i) => (
                 <Card key={title} variant="glass" index={i} className="p-6">
-                  <Icon size={20} className="text-[var(--accent)]" />
+                  <IconComponent size={20} className="text-[var(--accent)]" />
                   <h3 className="mt-4 text-base font-semibold">{title}</h3>
                   <p className="mt-2 text-sm leading-7 text-[var(--text-soft)]">{body}</p>
                 </Card>

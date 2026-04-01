@@ -7,16 +7,15 @@ import { useEffect, useState } from 'react'
  * @returns {{ theme: 'light'|'dark', toggleTheme: () => void }}
  */
 export function useTheme() {
-    const [theme, setTheme] = useState('light')
-
-    useEffect(() => {
+    const [theme, setTheme] = useState(() => {
         const stored = window.localStorage.getItem('navfy-theme')
         const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-        const resolved = stored ?? (systemDark ? 'dark' : 'light')
+        return stored ?? (systemDark ? 'dark' : 'light')
+    })
 
-        setTheme(resolved)
-        document.documentElement.classList.toggle('dark', resolved === 'dark')
-    }, [])
+    useEffect(() => {
+        document.documentElement.classList.toggle('dark', theme === 'dark')
+    }, [theme])
 
     const toggleTheme = () => {
         const next = theme === 'dark' ? 'light' : 'dark'

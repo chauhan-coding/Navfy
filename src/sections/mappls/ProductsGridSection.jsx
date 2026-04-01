@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import Card from '../../components/common/Card';
 import SectionHeading from '../../components/common/SectionHeading';
 import Button from '../../components/common/Button';

@@ -74,9 +74,9 @@ function HeroSection({ content }) {
 
               {/* Trust badges */}
               <div className="mt-10 flex flex-wrap items-center gap-5 border-t border-white/10 pt-8">
-                {TRUST_BADGES.map(({ icon: Icon, label }) => (
+                {TRUST_BADGES.map(({ icon: IconComponent, label }) => (
                   <div key={label} className="flex items-center gap-2 text-xs font-medium text-slate-300/80">
-                    <Icon size={13} className="text-cyan-300" />
+                    <IconComponent size={13} className="text-cyan-300" />
                     {label}
                   </div>
                 ))}
